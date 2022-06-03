@@ -1,0 +1,9 @@
+README.rst
+setup.py
+RC6/RC6.py
+RC6/__init__.py
+RC6.egg-info/PKG-INFO
+RC6.egg-info/SOURCES.txt
+RC6.egg-info/dependency_links.txt
+RC6.egg-info/not-zip-safe
+RC6.egg-info/top_level.txt

@@ -1,0 +1,17 @@
+Metadata-Version: 1.1
+Name: RC6
+Version: 1.2
+Summary: RC6 encode-decoder
+Home-page: UNKNOWN
+Author: Mikhail Bityutsky
+Author-email: darmollive@gmail.com
+License: BSD
+Description: This module provide basic encripting by RC6 algorythm 
+        
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
