@@ -1,0 +1,64 @@
+Turbo Assembler	 Version 5.3	    06-07-21 15:11:08	    Page 1
+208D22~1.ASM
+
+
+
+      1	0000			     DATA SEGMENT
+      2	      =02B8			 CLK0 EQU 2B8H
+      3	      =02B9			 CLK1 EQU 2B9H
+      4	      =02BA			 CLK2 EQU 2BAH
+      5	      =02BB			 CLKR EQU 2BBH
+      6	0000			     DATA ENDS
+      7	0000			     CODE SEGMENT
+      8					 ASSUME	CS:CODE,DS:DATA
+      9	0000			     START:
+     10	0000  BA 02BB			 MOV DX,CLKR
+     11	0003  B0 35			 MOV AL,00110101B
+     12	0005  EE			 OUT DX,AL
+     13
+     14	0006  BA 02B8			 MOV DX,CLK0
+     15	0009  B0 00			 MOV AL,00H
+     16	000B  EE			 OUT DX,AL
+     17
+     18	000C  B0 50			 MOV AL,50H
+     19	000E  EE			 OUT DX,AL
+     20
+     21	000F  BA 02BB			 MOV DX,CLKR
+     22	0012  B0 77			 MOV AL,01110111B
+     23	0014  EE			 OUT DX,AL
+     24
+     25	0015  BA 02B9			 MOV DX,CLK1
+     26	0018  B0 00			 MOV AL,00H
+     27	001A  EE			 OUT DX,AL
+     28
+     29	001B  B0 04			 MOV AL,04H
+     30	001D  EE			 OUT DX,AL
+     31	001E			     CODE ENDS
+     32				     END START
+Turbo Assembler	 Version 5.3	    06-07-21 15:11:08	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "06-07-21"
+??FILENAME			  Text	 "208D22~1"
+??TIME				  Text	 "15:11:08"
+??VERSION			  Number 0503
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODE
+@FILENAME			  Text	 208D22~1
+@WORDSIZE			  Text	 2
+CLK0				  Number 02B8
+CLK1				  Number 02B9
+CLK2				  Number 02BA
+CLKR				  Number 02BB
+START				  Near16 CODE:0000
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODE				  16  001E Para	  none
+DATA				  16  0000 Para	  none
+

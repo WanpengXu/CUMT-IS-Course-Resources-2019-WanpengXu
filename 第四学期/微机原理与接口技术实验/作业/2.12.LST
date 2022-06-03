@@ -1,0 +1,106 @@
+Turbo Assembler	 Version 5.3	    06-07-21 17:07:31	    Page 1
+212~1.ASM
+
+
+
+      1	0000			     DATA SEGMENT
+      2	      =0280			 PORTA EQU 280H
+      3	      =0281			 PORTB EQU 281H
+      4	      =0282			 PORTC EQU 282H
+      5	      =0283			 PORTR EQU 283H
+      6
+      7	      =02B8			 CLK0 EQU 2B8H
+      8	      =02B9			 CLK1 EQU 2B9H
+      9	      =02BA			 CLK2 EQU 2BAH
+     10	      =02BB			 CLKR EQU 2BBH
+     11	0000			     DATA ENDS
+     12	0000			     CODE SEGMENT
+     13					 ASSUME	CS:CODE,DS:DATA
+     14	0000			     START:
+     15				     ;8255
+     16	0000  BA 0283			 MOV DX,PORTR
+     17	0003  B0 8B			 MOV AL,10001011B
+     18	0005  EE			 OUT DX,AL
+     19				     ;8253³õÊ¼
+     20	0006  BA 02BB			 MOV DX,CLKR
+     21	0009  B0 35			 MOV AL,00110101B
+     22	000B  EE			 OUT DX,AL
+     23
+     24	000C  BA 02B8			 MOV DX,CLK0
+     25	000F  B0 00			 MOV AL,00H
+     26	0011  EE			 OUT DX,AL
+     27	0012  B0 50			 MOV AL,50H
+     28	0014  EE			 OUT DX,AL
+     29
+     30	0015  BA 02BB			 MOV DX,CLKR
+     31	0018  B0 77			 MOV AL,01110111B
+     32	001A  EE			 OUT DX,AL
+     33
+     34	001B  BA 02B9			 MOV DX,CLK1
+     35	001E  B0 00			 MOV AL,00H
+     36	0020  EE			 OUT DX,AL
+     37	0021  B0 04			 MOV AL,04H
+     38	0023  EE			 OUT DX,AL
+     39				     ;ÔÝ´æALÊý
+     40	0024  B0 01			 MOV AL,01H
+     41	0026  8A C8			 MOV CL,AL
+     42
+     43	0028			     ST1:
+     44	0028  BA 0280			 MOV DX,PORTA
+     45	002B  EE			 OUT DX,AL
+     46
+     47	002C  BA 0281			 MOV DX,PORTB
+     48	002F  EC			 IN AL,DX
+     49	0030  8A D8			 MOV BL,AL
+     50	0032  80 E3 01			 AND BL,01H
+     51	0035			     TEST1:
+     52	0035  EC			 IN AL,DX
+     53	0036  24 01			 AND AL,01H
+     54	0038  3A C3			 CMP AL,BL
+     55	003A  74 F9			 JZ TEST1
+     56
+     57	003C  8A C1			 MOV AL,CL
+Turbo Assembler	 Version 5.3	    06-07-21 17:07:31	    Page 2
+212~1.ASM
+
+
+
+     58	003E  D0 C0			 ROL AL,1
+     59	0040  8A C8			 MOV CL,AL
+     60
+     61	0042  EB E4			 JMP ST1
+     62	0044			     CODE ENDS
+     63				     END START
+Turbo Assembler	 Version 5.3	    06-07-21 17:07:31	    Page 3
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "06-07-21"
+??FILENAME			  Text	 "212~1	  "
+??TIME				  Text	 "17:07:31"
+??VERSION			  Number 0503
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODE
+@FILENAME			  Text	 212~1
+@WORDSIZE			  Text	 2
+CLK0				  Number 02B8
+CLK1				  Number 02B9
+CLK2				  Number 02BA
+CLKR				  Number 02BB
+PORTA				  Number 0280
+PORTB				  Number 0281
+PORTC				  Number 0282
+PORTR				  Number 0283
+ST1				  Near16 CODE:0028
+START				  Near16 CODE:0000
+TEST1				  Near16 CODE:0035
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODE				  16  0044 Para	  none
+DATA				  16  0000 Para	  none
+

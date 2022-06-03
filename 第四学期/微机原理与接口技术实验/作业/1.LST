@@ -1,0 +1,69 @@
+Turbo Assembler	 Version 5.3	    06-07-21 15:04:38	    Page 1
+1.asm
+
+
+
+      1	0000			     DATA SEGMENT
+      2	      =0280			 PORTA EQU 280H
+      3	      =0281			 PORTB EQU 281H
+      4	      =0282			 PORTC EQU 282H
+      5	      =0283			 PORTR EQU 283H
+      6	0000			     DATA ENDS
+      7	0000			     CODE SEGMENT
+      8					 ASSUME	CS:CODE,DS:DATA
+      9	0000			     START:
+     10	0000  BA 0283			 MOV DX,PORTR
+     11	0003  B0 90			 MOV AL,90H
+     12	0005  EE			 OUT DX,AL
+     13	0006  B0 01			 MOV AL,01H
+     14	0008  8A E0			 MOV AH,AL
+     15	000A			     TEST1:
+     16	000A  BA 0280			 MOV DX,PORTA
+     17	000D  EC			 IN AL,DX
+     18	000E  3C 01			 CMP AL,00000001B
+     19	0010  75 F8			 JNZ TEST1
+     20	0012  8A C4			 MOV AL,AH
+     21	0014  BA 0282			 MOV DX,PORTC
+     22	0017  EE			 OUT DX,AL
+     23	0018  D0 C0			 ROL AL,1
+     24	001A  BB 0100			 MOV BX,100H
+     25	001D			     DELAY:
+     26	001D  B9 FFFF			 MOV CX,0FFFFH
+     27	0020			     LOOP1:
+     28	0020  E2 FE			 LOOP LOOP1
+     29	0022  4B			 DEC BX
+     30	0023  75 F8			 JNZ DELAY
+     31	0025  8A E0			 MOV AH,AL
+     32	0027  EB E1			 JMP TEST1
+     33	0029			     CODE ENDS
+     34				     END START
+Turbo Assembler	 Version 5.3	    06-07-21 15:04:38	    Page 2
+Symbol Table
+
+
+
+
+Symbol Name			  Type	 Value
+
+??DATE				  Text	 "06-07-21"
+??FILENAME			  Text	 "1	  "
+??TIME				  Text	 "15:04:38"
+??VERSION			  Number 0503
+@CPU				  Text	 0101H
+@CURSEG				  Text	 CODE
+@FILENAME			  Text	 1
+@WORDSIZE			  Text	 2
+DELAY				  Near16 CODE:001D
+LOOP1				  Near16 CODE:0020
+PORTA				  Number 0280
+PORTB				  Number 0281
+PORTC				  Number 0282
+PORTR				  Number 0283
+START				  Near16 CODE:0000
+TEST1				  Near16 CODE:000A
+
+Groups & Segments		  Bit Size Align  Combine Class
+
+CODE				  16  0029 Para	  none
+DATA				  16  0000 Para	  none
+
