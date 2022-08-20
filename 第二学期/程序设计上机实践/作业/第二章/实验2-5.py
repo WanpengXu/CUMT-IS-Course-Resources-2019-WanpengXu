@@ -1,0 +1,7 @@
+print("请注意单位转换\n请输入三角形三边")
+a=eval(input())
+b=eval(input())
+c=eval(input())
+h=(1/2)*(a+b+c)
+S=pow(h*(h-a)*(h-b)*(h-c),(1/2))
+print("此三角形的面积为{:.2f}".format(S))

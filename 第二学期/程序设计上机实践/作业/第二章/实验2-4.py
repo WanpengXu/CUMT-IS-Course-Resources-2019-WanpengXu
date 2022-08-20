@@ -1,0 +1,7 @@
+print("这是一个计算欧式距离的小程序")
+x1=eval(input("请输入点A的横坐标"))
+y1=eval(input("请输入点A的纵坐标"))
+x2=eval(input("请输入点B的横坐标"))
+y2=eval(input("请输入点B的纵坐标"))
+L=pow(pow(x2-x1,2)+pow(y2-y1,2),(1/2))
+print("您所求的欧式距离为{:.2f}".format(L))

@@ -1,0 +1,10 @@
+a={"pscores.py","cscores.py","vbscores.py","vfpscores.py","c++scores.py"}
+b={"pscores.py","dbscores.py","osscores.py","c++scores.py","netscores.py"}
+#1)
+print(a-b)
+#2)
+print(a&b)
+#3)
+print(a^b)
+#4)
+print(a|b)

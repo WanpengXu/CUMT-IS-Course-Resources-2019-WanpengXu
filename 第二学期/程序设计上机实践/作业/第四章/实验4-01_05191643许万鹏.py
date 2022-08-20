@@ -1,0 +1,5 @@
+astr=input()
+letter=input()
+LETTER=letter.swapcase()
+N=astr.count(letter)+astr.count(LETTER)
+print(N)
