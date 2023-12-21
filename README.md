@@ -11,10 +11,12 @@
 请按各课程总评判断您需要的资源。
 
 Please choose the resources you need by course final grade.
+<!-- ![中文成绩单_23088220010531491X_许万鹏_页面_1_nn](https://testingcf.jsdelivr.net/gh/WanpengXu/myPicGo/img/202301251506677.jpg)
+![](https://testingcf.jsdelivr.net/gh/WanpengXu/myPicGo/img/202301251507513.jpg)-->
 
-![中文成绩单_23088220010531491X_许万鹏_页面_1_nn](https://testingcf.jsdelivr.net/gh/WanpengXu/myPicGo/img/202301251506677.jpg)
+![1](https://testingcf.jsdelivr.net/gh/WanpengXu/myPicGo/img/ms20231221095504017.png)
 
-![](https://testingcf.jsdelivr.net/gh/WanpengXu/myPicGo/img/202301251507513.jpg)
+![2](https://testingcf.jsdelivr.net/gh/WanpengXu/myPicGo/img/ms20231221095514628.png)
 
 注. 通过课程报告质量及课程总评可判断任课教师人品。
 
